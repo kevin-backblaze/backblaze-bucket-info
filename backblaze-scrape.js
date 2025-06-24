@@ -7,7 +7,7 @@ const puppeteer = require('puppeteer');
 
   // Step 1: Enter email and submit
   await page.waitForSelector('#email-field');
-  await page.type('input[name="email-field"]', 'klott+eu@pawneeparks.org');
+  await page.type('input[name="email-field"]', '*******');
 
   await page.click('button[type="submit"]');
 
