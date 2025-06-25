@@ -35,7 +35,7 @@ npm install
 
 ### Update Credentials
 
-Update script and enter your B2 login / email and password:
+Update script and enter your B2 Web login / email and password:
 
 ```bash
 const email = 'your-email@mail.com';
