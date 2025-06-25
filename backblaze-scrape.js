@@ -1,5 +1,9 @@
 const puppeteer = require('puppeteer');
 
+// Credentials
+const email = 'your-email@mail.com';
+const password = 'your-password';
+
 (async () => {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
@@ -7,19 +11,18 @@ const puppeteer = require('puppeteer');
 
   // Step 1: Enter email and submit
   await page.waitForSelector('#email-field');
-  await page.type('input[name="email-field"]', '*******');
-
+  await page.type('input[name="email-field"]', email);
   await page.click('button[type="submit"]');
 
   // Step 2: Wait for password field to appear, then enter password
   await page.waitForSelector('input[name="password-field"]');
-  await page.type('input[name="password-field"]', '*******');
+  await page.type('input[name="password-field"]', password);
   await page.click('button[type="submit"]');
 
   // Step 3: Wait for login redirect
   await page.waitForNavigation({ waitUntil: 'networkidle2' });
 
-  // Step 4: Navigate to the buckets page (update if different)
+  // Step 4: Navigate to the buckets page
   await page.goto('https://secure.backblaze.com/b2_buckets.htm', { waitUntil: 'networkidle2' });
 
   await page.waitForSelector('.b2-overview');

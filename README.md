@@ -33,13 +33,13 @@ cd backblaze-bucket-scraper
 npm install
 ```
 
-### Environment Setup
+### Update Credentials
 
-Create a `.env` file in the root directory:
+Update script and enter your B2 login / email and password:
 
-```env
-B2_EMAIL=your-email@example.com
-B2_PASSWORD=your-backblaze-password
+```bash
+const email = 'your-email@mail.com';
+const password = 'your-password';
 ```
 
 > ⚠️ 2FA is not yet supported. Use an account without TOTP/SMS for testing.
